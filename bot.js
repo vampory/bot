@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed()
-/////////////////////////
-////////////////////////
+
             var prefix = "!";
 bot.on('message', function(message) {
     const myID = "427082011111325707";
@@ -51,8 +50,6 @@ bot.on('message', function(message) {
         });
     }
 });
-/////////////////////
-/////////////////////
 
 bot.login(process.env.BOT_TOKEN);
 
