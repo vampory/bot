@@ -1,41 +1,78 @@
-const Discord = require('discord.js'),
-    bot = new Discord.Client({sisableEveryone: true})
-    console.log("Taino");
-bot.on('guildMemberAdd', member => {
-const mohamed= member.guild.channels.get("488013994410377226");
-if(!mohamed) return;
-if(mohamed) {
-setTimeout(() => mohamed.send(`**Welcome to Pax ..**`), 4000)        
-}
+const Discord = require("discord.js");
+const bot = new Discord.Client();
+const embed = new Discord.RichEmbed()
+bot.on('message', message => {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+
+    let args = message.content.split(" ").slice(1);
+ const devs = ['475070652727033858'];
+    if (command == "embed") {
+        let say = new Discord.RichEmbed()
+            .addField('Emebad:', `${message.author.username}#${message.author.discriminator}`)
+            .setDescription(args.join("  "))
+            .setColor(0x23b2d6)
+        message.channel.sendEmbed(say);
+        message.delete();
+    }
 });
- 
-const client = new Discord.Client();
+            var prefix = "!";
 
+bot.on('message', function(message) {
+    const myID = "your id";
+    let args = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(prefix + "setname")) {
+                if(message.author.id !== '427082011111325707') return;
+            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+        bot.user.setUsername(args);
+        message.channel.send(':white_check_mark: Done!').then(msg => {
+    
+        });
+} else if(message.content.startsWith(prefix + "stream")) {
+                if(message.author.id !== '427082011111325707') return;
+            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+        bot.user.setGame(args , 'https://twitch.tv/6xlez1');
+        message.channel.send(':white_check_mark: Done!').then(msg => {
+           msg.delete(5000);
+          message.delete(5000);
+        });
+    } else if(message.content.startsWith(prefix + "ply")) {
+                        if(message.author.id !== '427082011111325707') return;
+            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+        bot.user.setGame(args);
+        message.channel.send(':white_check_mark: Done!').then(msg => {
+           msg.delete(5000);
+          message.delete(5000);
+        });
+    } else if(message.content.startsWith(prefix + "listen")) {
+                        if(message.author.id !== '427082011111325707') return;
+            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+        bot.user.setActivity(args, {type:'LISTENING'});
+        message.channel.send(':white_check_mark: Done!').then(msg => {
+           msg.delete(5000);
+          message.delete(5000);
+        });
+    } else if(message.content.startsWith(prefix + "watch")) {
+                        if(message.author.id !== '427082011111325707') return;
+            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+        bot.user.setActivity(args, {type:'WATCHING'});
+        message.channel.send(':white_check_mark: Done!').then(msg => {
+           msg.delete(5000);
+          message.delete(5000);
+        });
+    } else if(message.content.startsWith(prefix + "setavatar")) {
+                        if(message.author.id !== '427082011111325707') return;
+        bot.user.setAvatar(args);
+        message.channel.send(':white_check_mark: Done!').then(msg => {
+                if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+           msg.delete(5000);
+          message.delete(5000);
+        });
+    }
+});
 
-
-
- const devs = ['475070652727033858' , '427082011111325707' , ''];
-const adminprefix = "!";
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
-      message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/ImD3s_x");
-      message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
-  }
-  });
 bot.login(process.env.BOT_TOKEN);
 
