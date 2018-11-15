@@ -9,7 +9,7 @@ bot.on('message', message => {
     command = command.slice(prefix.length);
 
     let args = message.content.split(" ").slice(1);
- const devs = ['475070652727033858'];
+ const devs = ['475070652727033858','475070652727033858'];
     if (command == "embed") {
         let say = new Discord.RichEmbed()
             .addField('Emebad:', `${message.author.username}#${message.author.discriminator}`)
