@@ -3,25 +3,25 @@ const Discord = require('discord.js'),
     console.log("Taino");
     
  const devs = ['427082011111325707' , '' , ''];
-const adminprefix = "!";
+const adminprefix = "";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'ply')) {
+  if (message.content.startsWith(adminprefix + 'v')) {
     client.user.setGame(argresult);
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'wt')) {
+  if (message.content.startsWith(adminprefix + 'vv')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
+  if (message.content.startsWith(adminprefix + 'vvv')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/ImD3s_x");
+  if (message.content.startsWith(adminprefix + 'V')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/Taino#6004");
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   }
   });
