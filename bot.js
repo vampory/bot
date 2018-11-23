@@ -20,7 +20,7 @@ client.on('message', message => {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'V')) {
+  if (message.content.startsWith(adminprefix + 'Q')) {
     client.user.setGame(argresult, "https://www.twitch.tv/Taino#6004");
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   }
