@@ -25,5 +25,10 @@ client.on('message', message => {
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
   }
   });
+ if (message.content.startsWith(adminprefix + 'av')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`**avatar set  : `);
+  }
+  });
 client.login(process.env.BOT_TOKEN);
 
