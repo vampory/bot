@@ -2,7 +2,7 @@ const Discord = require('discord.js'),
     client = new Discord.Client({sisableEveryone: true})
     console.log("Taino");
     
- const devs = ['427082011111325707' , '' , ''];
+ const devs = ['427082011111325707' , '475070652727033858' , ''];
 const adminprefix = "!";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
