@@ -23,12 +23,12 @@ client.on('message', message => {
   if (message.content.startsWith(adminprefix + 'st')) {
     client.user.setGame(argresult, "https://www.twitch.tv/Taino#6004");
       message.channel.sendMessage(`**  ${argresult} تم تغيير الحاله الي :white_check_mark:**`)
-  }
-  });
- if (message.content.startsWith(adminprefix + 'av')) {
+  } else
+   if (message.content.startsWith(adminprefix + 'av')) {
   client.user.setAvatar(argresult);
     message.channel.send(`**avatar set  : `);
-  }
-  });
+ }
+    });
+  
 client.login(process.env.BOT_TOKEN);
 
