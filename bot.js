@@ -61,7 +61,7 @@ channel.send(` i love credit`);
 }, 1500)
 })
  
-
+client.on('message', msg => {
  if(command === "say") {
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
