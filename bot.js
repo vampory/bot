@@ -62,7 +62,7 @@ channel.send(` i love credit`);
 })
  
 
- if (command === "say") {
+ if(command === "say") {
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
