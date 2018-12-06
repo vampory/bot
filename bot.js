@@ -62,10 +62,9 @@ channel.send(` i love credit`);
 })
  
 
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('#daily');
+ if (command === "say") {
+          message.delete()
+    message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
-});
 
  client.login(process.env.BOT_TOKEN); 
